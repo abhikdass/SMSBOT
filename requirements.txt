@@ -1,0 +1,4 @@
+tycrypto
+pyrogram
+pykeyboard
+requests
