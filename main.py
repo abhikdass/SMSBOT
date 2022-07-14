@@ -88,7 +88,7 @@ async def split(client,message):
         smallfile.close()
     if allfiles:
         for i in allfiles:
-            file=await message.reply_document(i,mime_type="text/plain")
+            file=await message.reply_document(i)
 async def country(country,product):
      headers = {'Content-Type': 'application/json','Authorization':'Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTQ3ODYyNjIsImlhdCI6MTYyMzI1MDI2MiwicmF5IjoiNmI3NzAyZTQ4MjljMjU0MjljNTA0YzE3MjkzNjliZmYiLCJzdWIiOjY0NjQ4M30.P-rqeoAFqCrRP3rDqeIMXUBE88jkX5iCS2sK0KhQXNyhAUVYe2ATo9zUAinKYGV_x3NgLgeAAFDdP_15-SO4UUyqIp-diZZEghir1QuBR_O0xhGL85c-Y71WO4IKszNy77C8S3oELl2iyW0pRkHjq975p1DfF-9hEjtUFDZO9YGdm15-I5eyBLAug3b2Sbdw20TTm18cqwkxOZQo_F5iemoYRNO3EL5M6ytkab24aUfhDlC-9neItLP6NogYr1_6VpI_lceGH0f8BMCbwiuDQAMUtgaD9HX63USjAb_3LQsIIzhQ9VTfVPhdBw_pQ3m90C4gWXGl5w_meJbDNZKt9A'}
      resp = requests.get("https://5sim.net/v1/user/buy/activation/"+country+"/any/"+product, headers=headers)
