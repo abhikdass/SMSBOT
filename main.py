@@ -37,6 +37,7 @@ async def callbackupdates(client,query):
      await query.message.reply_text("You have successfully got a number\n**Number:**"+phone+"\n**ID:**"+str(id)+"\n**PRODUCT:**"+pro+"\n**STATUS:**"+status+"")
      await query.message.delete()
     elif "refresh" in ii:
+     print(query.data)
      id=query.data.split(":")[1]
      idchek = await idcheck(id)
      idche = json.loads(idchek)
@@ -100,7 +101,7 @@ async def country(country,product):
      return response
 
 async def idcheck(id):
-     headers = {'Content-Type': 'application/json','Authorization':'Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NTQ3ODYyNjIsImlhdCI6MTYyMzI1MDI2MiwicmF5IjoiNmI3NzAyZTQ4MjljMjU0MjljNTA0YzE3MjkzNjliZmYiLCJzdWIiOjY0NjQ4M30.P-rqeoAFqCrRP3rDqeIMXUBE88jkX5iCS2sK0KhQXNyhAUVYe2ATo9zUAinKYGV_x3NgLgeAAFDdP_15-SO4UUyqIp-diZZEghir1QuBR_O0xhGL85c-Y71WO4IKszNy77C8S3oELl2iyW0pRkHjq975p1DfF-9hEjtUFDZO9YGdm15-I5eyBLAug3b2Sbdw20TTm18cqwkxOZQo_F5iemoYRNO3EL5M6ytkab24aUfhDlC-9neItLP6NogYr1_6VpI_lceGH0f8BMCbwiuDQAMUtgaD9HX63USjAb_3LQsIIzhQ9VTfVPhdBw_pQ3m90C4gWXGl5w_meJbDNZKt9A'}
+     headers = {'Content-Type': 'application/json','Authorization':'Bearer eyJhbGciOiJSUzUxMiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTE3NzY4ODAsImlhdCI6MTY2MDI0MDg4MCwicmF5IjoiNmI3NzAyZTQ4MjljMjU0MjljNTA0YzE3MjkzNjliZmYiLCJzdWIiOjY0NjQ4M30.UkEdfHl0rJvMg98sjkIugXe-zxn505wduE8MO-zPzZETRbKF3RSnoZZXwJzyBjCHSoe891S-4TJBNWYiRHJ66THgTezTNTCw3KtNvJaF6pt0mPbI8qvJ36P0WS88n2NYlwYZmv5WpE0hBBokvAMgrIvBt42viWQamU-dROczpJvnUA76ktoKoiM50G2NzbAZkTlbuOBy3SZzy2tB5oaQt3rm8GFQPWGV-t010td-A-D6dE6bbeE88B8uJsNFXtusHVEQxtWSuXxVOHgDR-K6YdnxcPYMSIZ81430wfg-aEa2NMQndm5426fWViJWAnFV6jDe96EuG22Tum387tnUsQ'}
      resp = requests.get("https://5sim.net/v1/user/check/"+id, headers=headers)
      response=resp.text
      return response
