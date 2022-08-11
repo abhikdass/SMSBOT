@@ -22,7 +22,7 @@ async def otphandler(client,message):
 
 @app.on_callback_query()
 async def callbackupdates(client,query):
-    ii = query["data"]
+    ii = query.data
     if "country" in ii:
      c = ii.split(',')
      i =await country(c[1],c[2])
@@ -34,7 +34,7 @@ async def callbackupdates(client,query):
      await query.message.reply_text("You have successfully got a number\n**Number:**"+phone+"\n**ID:**"+str(id)+"\n**PRODUCT:**"+pro+"\n**STATUS:**"+status+"")
      await query.message.delete()
     elif "refresh" in ii:
-     id=query["data"].split(":")[1]
+     id=query.data.split(":")[1]
      idchek = await idcheck(id)
      idche = json.loads(idchek)
      sms = idche["sms"]
