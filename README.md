@@ -10,7 +10,7 @@ This project is a Telegram bot designed to assist users with OTP handling and fi
 - **Service Information Display**: View a list of supported services for OTP retrieval.
 
 ## Technologies Used
-
+ 
 - **Python**: Core programming language for the bot's logic.
 - **Pyrogram**: Telegram bot framework for handling messages and interactions.
 - **Pykeyboard**: Library for managing inline keyboards in Telegram messages.
